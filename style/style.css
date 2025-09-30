@@ -1,25 +1,73 @@
+/*Foont------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/*variable Definition---------------------------------------------*/
+:root {
+  --green-color: hsl(75, 94%, 57%);
+  --white-color: hsl(0, 0%, 100%);
+  --gray-700-color: hsl(0, 0%, 20%);
+  --gray-800-color: hsl(0, 0%, 12%);
+  --gray-900-color: hsl(0, 0%, 8%);
+}
+
+/*Body Styles -------------------------------------------------*/
 body {
-  /*Body styles -------------------------------------------------*/
   margin: 0;
   padding: 0;
   display: grid;
   place-items: center;
+  /*Make robust fallback for the font-family*/
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
+  /*Main Styles --------------------------------------------------*/
+  .main {
+    /*Section Styles ---------------------------------------------*/
+    .card-section {
+      /*Card Wrapper Styles------------------------------------*/
+      .card-wrapper {
+        /*Card Image Container Styles -----------------------*/
+        .card-image-container {
+          /*Card Image Styles------------------------------*/
+          .card-image {
+          }
+        }
 
+        /*Card User Info Container Styles --------------------*/
+        .card-user-info-container {
+          /*Card user name Styles --------------------------*/
+          .card-user-name {
+          }
+          /*Card User Location Styles ---------------------*/
+          .card-user-location {
+          }
+          /*Card User Info Styles -------------------------*/
+          .card-user-info {
+          }
+        }
 
+        /*Card Content Container Styles ----------------------*/
+        .card-links-container {
+          /*Card Links List Styles -------------------------*/
+          .card-links-list {
+          }
+        }
+      }
+    }
+  }
 
-  /*Footer styles -----------------------------------------------*/
-  footer {
+  /*Footer Styles -----------------------------------------------*/
+  .footer {
     position: fixed;
     bottom: 1px;
     width: 100vw;
-    ul {
+    .footer-list {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
       align-self: stretch;
-      gap: 10px;
+      gap: 5px;
       list-style: none;
     }
   }
