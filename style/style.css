@@ -14,72 +14,101 @@
 body {
   margin: 0;
   padding: 0;
-  display: grid;
-  place-items: center;
-  overflow-x: hidden;
-  box-sizing: border-box;
+  height: 100vh;
   /*Make robust fallback for the font-family*/
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  height: 100vh;
 
   /*Main Styles --------------------------------------------------*/
   .main {
-    width: 100%;
-    height: 100%;
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
     background: var(--gray-900-color);
+
     /*Section Styles ---------------------------------------------*/
     .card-section {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
+      /*
+    -padding-block is for the top & bottom padding.
+    -padding-inline is for the left & right padding.
+    -these numbers in cacl() are found using linear equation. two points in coordinate.
+    (1000px, 40px)(600px, 0px) & (1000px, 40px)(600px, 24px).
+    */
+      padding-block: clamp(0px, calc(10vw - 60px), 40px);
+      padding-inline: clamp(24px, 4vw, 40px);
       /*Card Wrapper Styles------------------------------------*/
       .card-wrapper {
         display: flex;
+        align-items: center;
         flex-direction: column;
-        gap: 25px;
+        flex: 1 0 0;
+        gap: 24px;
+        padding: clamp(24px, 4vw, 40px);
+        width: clamp(279px, 60vw, 304px);
         border-radius: 12px;
         background: var(--gray-800-color);
-        padding: 20px;
         /*Card Image Container Styles -----------------------*/
         .card-image-container {
           display: flex;
           align-items: center;
           justify-content: center;
+          width: 100%;
           /*Card Image Styles------------------------------*/
           .card-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50px;
+            /*This a second option to add the user image*/
+            /* background: url("/assets/images/avatar-jessica.jpeg")
+              var(--gray-700-color) 50% / cover no-repeat; */
+            width: 88px;
+            height: 88px;
+            border-radius: 999px;
           }
         }
 
         /*Card User Info Container Styles --------------------*/
         .card-user-info-container {
           width: 100%;
-          /* border: 2px solid wheat; */
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          gap: 10px;
+          gap: 4px;
           /*Card user name Styles --------------------------*/
           .card-user-name {
             margin: 0;
             padding: 0;
+            color: var(--white-color);
+            text-align: center;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%;
           }
           /*Card User Location Styles ---------------------*/
           .card-user-location {
             padding: 0;
             margin: 0;
+            color: var(--green-color);
+            text-align: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%;
           }
+        }
+        /*Card User Work Container Styles ---------------------*/
+        .card-user-work-container {
+          width: 100%;
           /*Card User Info Styles -------------------------*/
-          .card-user-info {
+          .card-user-work {
             padding: 0;
-            padding-top: 10px;
             margin: 0;
+            text-align: center;
+            color: var(--white-color);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
           }
         }
 
@@ -88,32 +117,47 @@ body {
           width: 100%;
           height: 100%;
           padding: 0px;
-          margin: 0;
+          margin: 0px;
           /*Card Links List Styles -------------------------*/
           .card-links-list {
             width: 100%;
             list-style: none;
-            align-self: center;
             padding: 0;
             margin: 0;
-
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            gap: 16px;
             li {
-              border-radius: 10px;
+              border-radius: 8px;
               background: var(--gray-700-color);
-              padding: 15px 10px;
-              margin: 20px;
+              padding: 12px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
               text-align: center;
-              transition: background 1s ease;
+              align-self: stretch;
+              transition: background 0.5s ease;
 
               a {
+                width: 100%;
                 text-decoration: none;
                 color: var(--white-color);
-                transition: color 1s ease;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 150%;
+                transition: color 0.5s ease;
               }
               &:hover {
                 background: var(--green-color);
                 a {
                   color: var(--gray-900-color);
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 150%;
                 }
               }
             }
@@ -129,6 +173,7 @@ body {
     bottom: 1px;
     width: 100vw;
     .footer-list {
+      padding: 0;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -136,6 +181,9 @@ body {
       align-self: stretch;
       gap: 5px;
       list-style: none;
+      span {
+        color: var(--white-color);
+      }
     }
   }
 }
