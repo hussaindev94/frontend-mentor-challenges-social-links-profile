@@ -1,0 +1,26 @@
+body {
+  /*Body styles -------------------------------------------------*/
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+
+
+
+
+  /*Footer styles -----------------------------------------------*/
+  footer {
+    position: fixed;
+    bottom: 1px;
+    width: 100vw;
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
+      gap: 10px;
+      list-style: none;
+    }
+  }
+}
