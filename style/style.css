@@ -9,15 +9,6 @@
   --gray-800-color: hsl(0, 0%, 12%);
   --gray-900-color: hsl(0, 0%, 8%);
 }
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
 /*Body Styles -------------------------------------------------*/
 body {
   margin: 0;
