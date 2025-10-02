@@ -9,6 +9,9 @@
   --gray-800-color: hsl(0, 0%, 12%);
   --gray-900-color: hsl(0, 0%, 8%);
 }
+html {
+  overflow-x: hidden;
+}
 /*Body Styles -------------------------------------------------*/
 body {
   margin: 0;
@@ -53,14 +56,11 @@ body {
           display: flex;
           align-items: center;
           justify-content: center;
-          aspect-ratio: 1 / 1;
           overflow: hidden;
           /*Card Image Styles------------------------------*/
           .card-image {
-            width: clamp(4.0625rem, calc(4.1rem + 0.5vw), 5.5rem);
-            height: clamp(4.0625rem, calc(4.1rem + 0.5vh), 5.5rem);
-            object-fit: cover;
-            display: block;
+            width: 88px;
+            height: 88px;
             border-radius: 999px;
           }
         }
@@ -170,7 +170,7 @@ body {
 
   /*Footer Styles -----------------------------------------------*/
   .footer {
-    position: fixed;
+    position: absolute;
     bottom: 1px;
     width: 100vw;
     .footer-list {
